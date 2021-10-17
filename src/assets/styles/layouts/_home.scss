@@ -6,7 +6,6 @@ html {
 }
 
 body {
-  display: flex;
   height: 100vh;
   padding: 2rem;
   margin: 0;
@@ -14,7 +13,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: $uoc-corporate;
-  background-color: $uoc-bg;
+  background-color: $bg-white;
 }
 
 .uoc-container {
@@ -36,7 +35,7 @@ body {
   margin-bottom: 1.5rem;
   margin-left: auto;
 
-  @media (min-width: $mqMinWidth) {
+  @media (min-width: $mqMinWidthTablet) {
     max-width: 350px;
   }
 }
@@ -47,8 +46,40 @@ body {
   font-weight: 700;
   color: $uoc-corporate;
 
-  @media (min-width: $mqMinWidth) {
+  @media (min-width: $mqMinWidthTablet) {
     font-size: 36px;
+  }
+}
+
+.portada {
+  width: 100%;
+  height: 200vh;
+  background: #ddd;
+  margin: 0;
+  font-size: 99px;
+  text-align: center;
+  position:relative;
+  .scroll-dist {
+    width: 100%;
+    height: 200vh;
+    position: absolute;
+    background-color: $bg-white;
+  }
+  .main-portada {
+    position: fixed;
+    background: #fff none repeat scroll 0% 0%;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  svg image, svg polyline {
+    transform-origin: 0px 0px 0px;
   }
 }
 
@@ -59,35 +90,25 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-.sliders-wrapper {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.slider-bar {
-  width: 100%;
-}
-.bar {
-  width: 80%;
-  height: 2rem;
-  margin: 1rem auto;
-  border: 1px solid black;
-  
-}
-
-.bar.is-active-1 {
-  background: linear-gradient(to right, black 33%, transparent 33%)
-}
-
-.bar.is-active-2 {
-  background: linear-gradient(to right, black 66%, transparent 66%)
-}
-.bar.is-active-3 {
-  background: linear-gradient(to right, black 100%, transparent 100%)
+  background-color: $bg-white;
+  .sliders-wrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .slider-bar {
+    width: 100%;
+    .bar {
+      width: 80%;
+      height: 2rem;
+      margin: 1rem auto;
+      border: 1px solid black;
+      background: linear-gradient(to right, black 10%, transparent 10%);
+    }
+  }
 }
 
 .text-container {
@@ -128,4 +149,15 @@ body {
 }
 .slide-3 p {
   background-color: purple;
+}
+
+
+.flex {
+  display: flex;
+}
+.w-100{
+  width:100%;
+}
+.m-auto {
+  margin: auto;
 }
