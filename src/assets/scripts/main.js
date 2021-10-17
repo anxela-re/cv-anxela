@@ -31,31 +31,25 @@
     slidersEffect();
   }
   function checkPosition() {
-    // document.querySelector(
-    //   ".sky"
-    // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(0, -200)})`;
     document.querySelector(
       ".desk"
     ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(0, -800)})`;
 
     document.querySelector(
       ".monitor"
-    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, -700)})`;
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(120, -400)})`;
+
     document.querySelector(
       ".plant"
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(80, -500)})`;
+
+    document.querySelector(
+      ".notebook"
     ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, -600)})`;
-    // document.querySelector(
-    //   ".cloud3"
-    // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(-50, -650)})`;
-    // document.querySelector(
-    //   ".monitor"
-    // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(-10, -100)})`;
-    // document.querySelector(
-    //   ".mountMg"
-    // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(-30, -250)})`;
-    // document.querySelector(
-    //   ".mountFg"
-    // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(-50, -600)})`;
+
+    document.querySelector(
+      ".cup"
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(150, -550)})`;
   }
 
   function calculateTransform(y1, y2, max) {
