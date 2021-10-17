@@ -40,7 +40,7 @@
 
     document.querySelector(
       ".monitor"
-    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(20, -700)})`;
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, -700)})`;
     document.querySelector(
       ".plant"
     ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, -600)})`;
