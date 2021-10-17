@@ -40,10 +40,10 @@
 
     document.querySelector(
       ".monitor"
-    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(0, 700, 345)})`;
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(20, -700)})`;
     document.querySelector(
       ".plant"
-    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, 600, 270)})`;
+    ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(50, -600)})`;
     // document.querySelector(
     //   ".cloud3"
     // ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(-50, -650)})`;
@@ -62,7 +62,7 @@
     let scrollDist = document.querySelector(".scroll-dist");
     let scrollDistV = scrollDist.getBoundingClientRect();
     let calc = y1 + (Math.abs(scrollDistV.top) * y2) / (scrollDistV.height / 2);
-    return calc > max ? max : calc;
+    return calc < 0 ?  calc : 0;
   }
   function slidersEffect() {
     let slidersContainer = document.querySelector(".sliders-container");
