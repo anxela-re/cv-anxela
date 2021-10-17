@@ -9,7 +9,6 @@
     "block-closing-brace-empty-line-before": null,
     "block-closing-brace-newline-after": null,
     "block-opening-brace-space-before": null,
-    "color-named": "never",
     "declaration-block-semicolon-newline-before": "never-multi-line",
     "declaration-empty-line-before": null,
     "declaration-no-important": true,

@@ -13,7 +13,7 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: $uoc-corporate;
-  background-color: $bg-white;
+  background-color: $white;
 }
 
 .uoc-container {
@@ -23,8 +23,8 @@ body {
   text-align: center;
   background-color: #fff;
   border-radius: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px -1px $black-100,
+    0 2px 4px -1px $black-60;
 }
 
 .uoc-logo {
@@ -52,27 +52,29 @@ body {
 }
 
 .portada {
+  position:relative;
   width: 100%;
   height: 200vh;
-  background: #ddd;
   margin: 0;
   font-size: 99px;
   text-align: center;
-  position:relative;
+  background: #ddd;
+
   .scroll-dist {
+    position: absolute;
     width: 100%;
     height: 200vh;
-    position: absolute;
-    background-color: $bg-white;
+    background-color: $white;
   }
+
   .main-portada {
     position: fixed;
-    background: #fff none repeat scroll 0% 0%;
+    top: 0;
+    left: 50%;
     width: 100%;
     max-width: 1200px;
     height: 100%;
-    top: 0;
-    left: 50%;
+    background: #fff none repeat scroll 0% 0%;
     transform: translate(-50%);
   }
   svg:not(:root) {
@@ -90,14 +92,14 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: $bg-white;
+  background-color: $white;
   .sliders-wrapper {
     position: sticky;
     top: 0;
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100vh;
   }
   .slider-bar {
     width: 100%;
@@ -105,8 +107,8 @@ body {
       width: 80%;
       height: 2rem;
       margin: 1rem auto;
-      border: 1px solid black;
-      background: linear-gradient(to right, black 10%, transparent 10%);
+      background: linear-gradient(to right, $black 10%, transparent 10%);
+      border: 1px solid $black;
     }
   }
 }
@@ -115,9 +117,9 @@ body {
   width: 50%;
   margin: auto;
   p {
+    display: inline;
     font-size: 1.4rem;
     line-height: 1.6;
-    display: inline;
   }
 }
 .slide {
@@ -125,17 +127,17 @@ body {
   top: 0;
   left: 50%;
   z-index: 1;
-  max-width: 1920px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
+  max-width: 1920px;
   height: 100vh;
-  transform: translateX(-50%);
-  text-align: center;
   overflow: hidden;
+  text-align: center;
   opacity: 0;
+  transform: translateX(-50%);
 }
 .slide.is-active {
   opacity: 1;

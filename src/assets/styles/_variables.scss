@@ -10,7 +10,18 @@ $uoc-masterbrand: #73edff;
 $uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
 
 
-$bg-white: #fff;
+$white: #fff;
+$black: #000;
+$black-60: rgba(0,0,0,0.06);
+$black-100: rgba(0,0,0,0.1);
+$black-200: rgba(0,0,0,0.2);
+$black-300: rgba(0,0,0,0.3);
+$black-400: rgba(0,0,0,0.4);
+$black-500: rgba(0,0,0,0.5);
+$black-600: rgba(0,0,0,0.6);
+$black-700: rgba(0,0,0,0.7);
+$black-800: rgba(0,0,0,0.8);
+$black-900: rgba(0,0,0,0.9);
 
 $mqMinWidthTablet: 420px;
 $mqMinWidthDesktop: 1000px;
