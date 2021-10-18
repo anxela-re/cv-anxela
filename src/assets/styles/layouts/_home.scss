@@ -5,15 +5,41 @@ html {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
-  padding: 2rem;
   margin: 0;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
-  color: $uoc-corporate;
+  color: $black;
   background-color: $white;
+}
+section {
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  text-align: center;
+  padding: 2rem;
+}
+.fill-container {
+  width: 100%;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: $secondary;
+}
+a:hover {
+  color: $secondary-800;
+  cursor: pointer;
+}
+h2 {
+  font-size: 5rem;
+  line-height: 1;
 }
 
 .uoc-container {
@@ -23,8 +49,7 @@ body {
   text-align: center;
   background-color: #fff;
   border-radius: 2rem;
-  box-shadow: 0 4px 6px -1px $black-100,
-    0 2px 4px -1px $black-60;
+  box-shadow: 0 4px 6px -1px $black-100, 0 2px 4px -1px $black-60;
 }
 
 .uoc-logo {
@@ -52,13 +77,14 @@ body {
 }
 
 .portada {
-  position:relative;
+  position: relative;
   width: 100%;
   height: 200vh;
   margin: 0;
   font-size: 99px;
   text-align: center;
   background: #ddd;
+  z-index: -1;
 
   .scroll-dist {
     position: absolute;
@@ -74,7 +100,7 @@ body {
     width: 100%;
     max-width: 1200px;
     height: 100%;
-    background: #fff none repeat scroll 0% 0%;
+    background: $white none repeat scroll 0% 0%;
     transform: translate(-50%);
     svg {
       width: 100%;
@@ -84,8 +110,68 @@ body {
   svg:not(:root) {
     overflow: hidden;
   }
-  svg image, svg polyline {
+  svg image,
+  svg polyline {
     transform-origin: 0px 0px 0px;
+  }
+}
+.arrowButton {
+  position: sticky;
+  top: 80vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.presentation {
+  background-color: $white;
+  padding: 5rem 4rem;
+
+  .img-container {
+    width: 45vh;
+    height: 45vh;
+    margin: auto;
+    text-align: center;
+    background: $secondary;
+    background: radial-gradient(
+      circle,
+      $secondary 51%,
+      $primary-800 68%,
+      $white 70%,
+      $white 100%
+    );
+    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 41vh;
+      height: 41vh;
+      border-radius: 100%;
+      border: 1px solid $secondary-50;
+    }
+  }
+  .header {
+    text-align: center;
+    h1 {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+      display: inline-block;
+      background: $linear-gradient-primary;
+    }
+    h2 {
+      max-width: 850px;
+      margin: 1rem auto;
+    }
+    a {
+      font-weight: 500;
+      font-size: 2.1rem;
+      line-height: 3;
+      i {
+        font-size: x-large;
+      }
+    }
   }
 }
 
@@ -97,6 +183,72 @@ body {
   flex-direction: column;
   width: 100%;
   background-color: $white;
+
+  .slider-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 1rem auto;
+
+    .slider-bar-item {
+      width: 8vh;
+      height: 8vh;
+      background-color: $white;
+      border-radius: 100%;
+      border: 4px solid $primary;
+      position: relative;
+      .container-item {
+        width: 6vh;
+        height: 6vh;
+        background-color: $primary;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+        i {
+          color: $white;
+        }
+      }
+    }
+
+    .slider-link {
+      height: 100%;
+      width: 15vh;
+      position: relative;
+      z-index: 1;
+      background-color: $white;
+      height: 1vh;
+      .container-link {
+        border-top: 4px solid $primary;
+        border-bottom: 4px solid $primary;
+        border-left: 8px solid $white;
+        border-right: 8px solid $white;
+        width: calc(100% + 8px);
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .slider-bar-item.active {
+      background-color: $secondary-700;
+      .container-item {
+        // background-color: $primary;
+        i {
+          color: $secondary-700;
+        }
+      }
+    }
+  }
   .sliders-wrapper {
     position: sticky;
     top: 0;
@@ -104,65 +256,90 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100vh;
-  }
-  .slider-bar {
-    width: 100%;
-    .bar {
-      width: 80%;
-      height: 2rem;
-      margin: 1rem auto;
-      background: linear-gradient(to right, $black 10%, transparent 10%);
-      border: 1px solid $black;
+
+    .text-container {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      p {
+        display: inline;
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+    }
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 1920px;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    .slide.is-active {
+      opacity: 1;
+      transition: opacity 0.3s ease 0.2s;
+    }
+    .slide-1 p {
+      background-color: pink;
+    }
+    .slide-2 p {
+      background-color: orange;
+    }
+    .slide-3 p {
+      background-color: purple;
     }
   }
 }
-
-.text-container {
-  width: 50%;
-  margin: auto;
-  p {
-    display: inline;
-    font-size: 1.4rem;
-    line-height: 1.6;
+footer#contact {
+  width: 100%;
+  height: 100vh;
+  background-color: $secondary;
+  background-image: linear-gradient(315deg, $secondary-dark 0%, $black 74%);
+  color: $white;
+  text-align: center;
+  .contact-container {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    h2 {
+      padding: 2rem 0;
+      margin: auto;
+      max-width: 800px;
+      background: linear-gradient(to right, $primary 0%, $secondary 100%);
+      background-size: 200% 200%;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .email {
+      font-size: 2rem;
+      font-family: $font-family-serif;
+    }
+    .icon-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+    }
+  }
+  a {
+    color: $white;
   }
 }
-.slide {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1920px;
-  height: 100vh;
-  overflow: hidden;
-  text-align: center;
-  opacity: 0;
-  transform: translateX(-50%);
-}
-.slide.is-active {
-  opacity: 1;
-  transition: opacity 0.3s ease 0.2s;
-}
-.slide-1 p {
-  background-color: pink;
-}
-.slide-2 p {
-  background-color: orange;
-}
-.slide-3 p {
-  background-color: purple;
-}
-
 
 .flex {
   display: flex;
 }
-.w-100{
-  width:100%;
+.w-100 {
+  width: 100%;
 }
 .m-auto {
   margin: auto;
