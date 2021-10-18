@@ -71,6 +71,8 @@
         slidersContainer.getBoundingClientRect().height) *
       100;
 
+      console.info(percentage)
+
     sliderBar.style.background = `linear-gradient(to right, black ${percentage}%, transparent ${percentage}%)`;
     if (percentage > 40) {
       slide1.classList.remove("is-active");
