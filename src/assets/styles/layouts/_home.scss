@@ -21,17 +21,17 @@ body {
 section {
   width: 100%;
   height: 100vh;
-  background-color: $white;
-  text-align: center;
   padding: 2rem;
+  text-align: center;
+  background-color: $white;
 }
 .fill-container {
   width: 100%;
   height: 100%;
 }
 a {
-  text-decoration: none;
   color: $secondary;
+  text-decoration: none;
 }
 a:hover {
   color: $secondary-800;
@@ -78,13 +78,13 @@ h2 {
 
 .portada {
   position: relative;
+  z-index: -1;
   width: 100%;
   height: 200vh;
   margin: 0;
   font-size: 99px;
   text-align: center;
   background: #ddd;
-  z-index: -1;
 
   .scroll-dist {
     position: absolute;
@@ -115,7 +115,7 @@ h2 {
     transform-origin: 0px 0px 0px;
   }
 }
-.arrowButton {
+.arrow-button {
   position: sticky;
   top: 80vh;
   left: 50%;
@@ -123,10 +123,11 @@ h2 {
 }
 
 .presentation {
-  background-color: $white;
   padding: 5rem 4rem;
+  background-color: $white;
 
   .img-container {
+    position: relative;
     width: 45vh;
     height: 45vh;
     margin: auto;
@@ -139,25 +140,24 @@ h2 {
       $white 70%,
       $white 100%
     );
-    position: relative;
     img {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
       width: 41vh;
       height: 41vh;
-      border-radius: 100%;
       border: 1px solid $secondary-50;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
     }
   }
   .header {
     text-align: center;
     h1 {
+      display: inline-block;
+      margin-bottom: 1rem;
       font-size: 2.8rem;
       line-height: 1;
-      margin-bottom: 1rem;
-      display: inline-block;
       background: $linear-gradient-primary;
     }
     h2 {
@@ -165,8 +165,8 @@ h2 {
       margin: 1rem auto;
     }
     a {
-      font-weight: 500;
       font-size: 2.1rem;
+      font-weight: 500;
       line-height: 3;
       i {
         font-size: x-large;
@@ -186,66 +186,62 @@ h2 {
 
   .slider-bar {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 800px;
     margin: 1rem auto;
 
     .slider-bar-item {
+      position: relative;
       width: 8vh;
       height: 8vh;
       background-color: $white;
-      border-radius: 100%;
       border: 4px solid $primary;
-      position: relative;
+      border-radius: 100%;
       .container-item {
-        width: 6vh;
-        height: 6vh;
-        background-color: $primary;
-        border-radius: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
-        text-align: center;
         justify-content: space-around;
-        i {
-          color: $white;
-        }
+        width: 6vh;
+        height: 6vh;
+        text-align: center;
+        background-color: $primary;
+        border-radius: 100%;
+        transform: translate(-50%, -50%);
+      }
+      i {
+        color: $white;
       }
     }
 
     .slider-link {
-      height: 100%;
-      width: 15vh;
       position: relative;
       z-index: 1;
-      background-color: $white;
+      width: 15vh;
       height: 1vh;
+      background-color: $white;
       .container-link {
-        border-top: 4px solid $primary;
-        border-bottom: 4px solid $primary;
-        border-left: 8px solid $white;
-        border-right: 8px solid $white;
-        width: calc(100% + 8px);
-        height: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
+        width: calc(100% + 8px);
+        height: 100%;
+        border-top: 4px solid $primary;
+        border-right: 8px solid $white;
+        border-bottom: 4px solid $primary;
+        border-left: 8px solid $white;
         transform: translate(-50%, -50%);
       }
     }
 
     .slider-bar-item.active {
       background-color: $secondary-700;
-      .container-item {
-        // background-color: $primary;
-        i {
-          color: $secondary-700;
-        }
+      i {
+        color: $secondary-700;
       }
     }
   }
@@ -299,35 +295,35 @@ h2 {
     }
   }
 }
-footer#contact {
+footer {
   width: 100%;
   height: 100vh;
-  background-color: $secondary;
-  background-image: linear-gradient(315deg, $secondary-dark 0%, $black 74%);
   color: $white;
   text-align: center;
+  background-color: $secondary;
+  background-image: linear-gradient(315deg, $secondary-dark 0%, $black 74%);
   .contact-container {
-    justify-content: space-around;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     height: 90%;
     h2 {
+      max-width: 800px;
       padding: 2rem 0;
       margin: auto;
-      max-width: 800px;
       background: linear-gradient(to right, $primary 0%, $secondary 100%);
-      background-size: 200% 200%;
       background-clip: text;
+      background-size: 200% 200%;
       -webkit-text-fill-color: transparent;
     }
     .email {
-      font-size: 2rem;
       font-family: $font-family-serif;
+      font-size: 2rem;
     }
     .icon-container {
       display: flex;
-      gap: 1rem;
       justify-content: center;
+      gap: 1rem;
     }
   }
   a {
