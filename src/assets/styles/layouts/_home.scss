@@ -1,7 +1,4 @@
-*,
-::after,
-::before,
-html {
+* {
   box-sizing: border-box;
 }
 
@@ -10,24 +7,23 @@ html {
 }
 
 body {
+  width: 100%;
   height: 100vh;
   margin: 0;
   font-family: $font-family-sans-serif;
   font-size: 16px;
   line-height: 24px;
   color: $black;
+  word-break: normal;
   background-color: $white;
 }
 section {
-  width: 100%;
-  height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
   padding: 2rem;
   text-align: center;
   background-color: $white;
-}
-.fill-container {
-  width: 100%;
-  height: 100%;
 }
 a {
   color: $secondary;
@@ -37,42 +33,58 @@ a:hover {
   color: $secondary-800;
   cursor: pointer;
 }
-h2 {
-  font-size: 5rem;
+h1 {
+  font-size: 1.5rem;
   line-height: 1;
 }
-
-.uoc-container {
-  max-width: 800px;
-  padding: 2rem;
-  margin: auto;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 2rem;
-  box-shadow: 0 4px 6px -1px $black-100, 0 2px 4px -1px $black-60;
+h2 {
+  font-size: 2.3rem;
+  line-height: 1;
+}
+h3 {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+p {
+  font-size: 0.8rem;
+}
+.fa-2x {
+  font-size: 1rem;
+}
+.fa-4x {
+  font-size: 2rem;
 }
 
-.uoc-logo {
-  display: block;
-  max-width: 200px;
-  height: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  margin-left: auto;
-
-  @media (min-width: $mqMinWidthTablet) {
-    max-width: 350px;
+@media (min-width: $mqMinWidthTablet) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+  .fa-2x {
+    font-size: 1.5rem;
+  }
+  .fa-4x {
+    font-size: 3rem;
   }
 }
-
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidthTablet) {
-    font-size: 36px;
+@media (min-width: $mqMinWidthDesktop) {
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .fa-2x {
+    font-size: 2rem;
+  }
+  .fa-4x {
+    font-size: 4rem;
   }
 }
 
@@ -82,7 +94,6 @@ h2 {
   width: 100%;
   height: 200vh;
   margin: 0;
-  font-size: 99px;
   text-align: center;
   background: #ddd;
 
@@ -97,8 +108,8 @@ h2 {
     position: fixed;
     top: 0;
     left: 50%;
-    width: 100%;
-    max-width: 1200px;
+    width: 98%;
+    max-width: 800px;
     height: 100%;
     background: $white none repeat scroll 0% 0%;
     transform: translate(-50%);
@@ -123,14 +134,17 @@ h2 {
 }
 
 .presentation {
-  padding: 5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 1rem;
   background-color: $white;
 
   .img-container {
     position: relative;
-    width: 45vh;
-    height: 45vh;
-    margin: auto;
+    width: 200px;
+    height: 200px;
+    margin: 0.2rem auto;
     text-align: center;
     background: $secondary;
     background: radial-gradient(
@@ -144,8 +158,8 @@ h2 {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 41vh;
-      height: 41vh;
+      width: 180px;
+      height: 180px;
       border: 1px solid $secondary-50;
       border-radius: 100%;
       transform: translate(-50%, -50%);
@@ -155,152 +169,365 @@ h2 {
     text-align: center;
     h1 {
       display: inline-block;
-      margin-bottom: 1rem;
-      font-size: 2.8rem;
-      line-height: 1;
+      margin: 0.2rem auto;
       background: $linear-gradient-primary;
     }
     h2 {
-      max-width: 850px;
       margin: 1rem auto;
+      line-height: 1;
     }
     a {
-      font-size: 2.1rem;
+      font-size: 1.2rem;
       font-weight: 500;
-      line-height: 3;
+      line-height: 1;
       i {
-        font-size: x-large;
+        font-size: large;
+      }
+    }
+  }
+}
+@media (min-width: $mqMinWidthTablet) {
+  .presentation {
+    padding: 5rem 4rem;
+    .img-container {
+      width: 260px;
+      height: 260px;
+      margin: 1rem auto;
+      img {
+        width: 240px;
+        height: 240px;
+      }
+    }
+    .header {
+      h1 {
+        margin: 1rem auto;
+      }
+      h2 {
+        max-width: 600px;
+        margin-bottom: 3rem;
+        font-size: 4rem;
+      }
+      a {
+        font-size: 2.1rem;
+        i {
+          font-size: x-large;
+        }
       }
     }
   }
 }
 
-.sliders-container {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: $white;
-
-  .slider-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 1rem auto;
-
-    .slider-bar-item {
-      position: relative;
-      width: 8vh;
-      height: 8vh;
-      background-color: $white;
-      border: 4px solid $primary;
-      border-radius: 100%;
-      .container-item {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 6vh;
-        height: 6vh;
-        text-align: center;
-        background-color: $primary;
-        border-radius: 100%;
-        transform: translate(-50%, -50%);
-      }
-      i {
-        color: $white;
+@media (min-width: $mqMinWidthDesktop) {
+  .presentation {
+    .img-container {
+      width: 45vh;
+      height: 45vh;
+      img {
+        width: 41vh;
+        height: 41vh;
       }
     }
-
-    .slider-link {
-      position: relative;
-      z-index: 1;
-      width: 15vh;
-      height: 1vh;
-      background-color: $white;
-      .container-link {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: calc(100% + 8px);
-        height: 100%;
-        border-top: 4px solid $primary;
-        border-right: 8px solid $white;
-        border-bottom: 4px solid $primary;
-        border-left: 8px solid $white;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-    .slider-bar-item.active {
-      background-color: $secondary-700;
-      i {
-        color: $secondary-700;
+    .header {
+      h2 {
+        max-width: 800px;
       }
     }
   }
-  .sliders-wrapper {
-    position: sticky;
+}
+
+.sliders {
+  display: flex;
+  .sliders-container {
+    position: relative;
     top: 0;
+    bottom: 0;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    background-color: $white;
 
-    .text-container {
-      width: 100%;
-      max-width: 900px;
-      margin: auto;
-      p {
-        display: inline;
-        font-size: 1.4rem;
-        line-height: 1.6;
-      }
-    }
-    .slide {
-      position: absolute;
+    .sliders-wrapper {
+      position: sticky;
       top: 0;
-      left: 50%;
-      z-index: 1;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
       width: 100%;
-      max-width: 1920px;
       height: 100vh;
-      overflow: hidden;
-      text-align: center;
-      opacity: 0;
-      transform: translateX(-50%);
-      p {
-        display: block;
-        margin: .2rem auto;
-      }
-      h2 {
-        font-size: 3rem;
-      }
-      h3 {
-      display: inline;
-      font-size:1.3rem;
-      line-height: 1.5;
-      background-color: $primary;
+    }
+  }
 
+  .slide-1 p {
+    display: inline;
+    margin-left: 1rem;
+  }
+  .slide {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1920px;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-50%);
+
+    .text-container:not(.skills) {
+      width: 100%;
+      max-width: 900px;
+      p {
+        margin: 0.2rem auto;
       }
     }
-    .slide.is-active {
-      opacity: 1;
-      transition: opacity 0.3s ease 0.2s;
+    .text-container {
+      margin: auto;
+      h2 {
+        margin: 0.2rem auto;
+        font-size: 1.2rem;
+      }
+      h3 {
+        display: inline;
+        margin: 0.2rem auto;
+        font-weight: 400;
+        background-color: $primary;
+      }
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: stretch;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      > div {
+        padding: 0.5rem;
+        background-color: $black-100;
+        border-radius: 10px;
+      }
+      i {
+        font-size: 1.8em;
+      }
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .slide.is-active {
+    opacity: 1;
+    transition: opacity 0.3s ease 0.2s;
+  }
+}
+
+@media (min-width: $mqMinWidthTablet) {
+  .sliders {
+    .slide {
+      .text-container {
+        > div {
+          max-width: 700px;
+          margin: auto;
+        }
+        h2 {
+          margin: 0.5rem auto;
+          font-size: 2.2rem;
+        }
+        h3 {
+          margin: 0.5rem auto;
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+      .text-container:not(.skills) {
+        p {
+          margin: 0.5rem auto;
+        }
+      }
+      .skills {
+        max-width: 500px;
+        i {
+          font-size: 2em;
+        }
+      }
+    }
+    .slide-1 p {
+      display: block;
+      margin: 1rem auto;
     }
   }
 }
+@media (min-width: $mqMinWidthDesktop) {
+  .sliders {
+    .slide {
+      .text-container {
+        > div {
+          max-width: 850px;
+        }
+        h2 {
+          margin: 1rem auto;
+          font-size: 2.5rem;
+        }
+        h3 {
+          margin: 1rem auto;
+          font-size: 1.5rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .text-container:not(.skills) {
+        p {
+          margin: 1rem auto;
+        }
+      }
+      .skills {
+        max-width: 700px;
+        i {
+          font-size: 6em;
+        }
+      }
+    }
+  }
+}
+
+.slider-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto;
+
+  .slider-bar-item {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: $white;
+    border: 4px solid $primary;
+    border-radius: 100%;
+    > div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      background-color: $primary;
+      border-radius: 100%;
+      transform: translate(-50%, -50%);
+    }
+    i {
+      font-size: 1em;
+      color: $white;
+    }
+  }
+
+  .slider-link {
+    position: relative;
+    z-index: 1;
+    width: 20%;
+    height: 1vh;
+    min-height: 10px;
+    background-color: $white;
+    .container-link {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: calc(100% + 4px);
+      height: 100%;
+      border-top: 2px solid $primary;
+      border-right: 3px solid $white;
+      border-bottom: 2px solid $primary;
+      border-left: 3px solid $white;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .slider-bar-item.active {
+    background-color: $secondary-700;
+    i {
+      color: $secondary-700;
+    }
+  }
+}
+@media (min-width: $mqMinWidthTablet) {
+  .slider-bar {
+    .slider-bar-item {
+      width: 8vh;
+      height: 8vh;
+      > div {
+        width: 6vh;
+        height: 6vh;
+      }
+      i {
+        font-size: 1.5em;
+      }
+    }
+    .slider-link {
+      width: 15vh;
+      height: 1.2vh;
+      .container-link {
+        width: calc(100% + 8px);
+        border-top-width: 4px;
+        border-right-width: 8px;
+        border-bottom-width: 4px;
+        border-left-width: 8px;
+      }
+    }
+  }
+}
+@media (min-width: $mqMinWidthDesktop) {
+  .slider-bar {
+    .slider-bar-item {
+      i {
+        font-size: 2em;
+      }
+    }
+    .slider-link {
+      height: 1.5vh;
+    }
+  }
+}
+
+.projects {
+  h2 {
+    display: inline;
+    background: $linear-gradient-primary;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 900px;
+    padding-top: 2rem;
+    margin: auto;
+    gap: 1rem;
+    > div {
+      padding: 2rem;
+      background-color: $black-100;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+}
+
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   width: 100%;
   height: 100vh;
   color: $white;
@@ -311,19 +538,19 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 90%;
+    height: 50vh;
     h2 {
       max-width: 800px;
       padding: 2rem 0;
       margin: auto;
       background: linear-gradient(to right, $primary 0%, $secondary 100%);
       background-clip: text;
-      background-size: 200% 200%;
+      background-size: 100% 100%;
       -webkit-text-fill-color: transparent;
     }
     .email {
       font-family: $font-family-serif;
-      font-size: 2rem;
+      font-size: 1.3rem;
     }
     .icon-container {
       display: flex;
@@ -335,13 +562,44 @@ footer {
     color: $white;
   }
 }
+@media (min-width: $mqMinWidthTablet) {
+  footer {
+    .email {
+      font-size: 2rem;
+    }
+  }
+}
 
-.flex {
-  display: flex;
+.fa-html5 {
+  color: $html;
 }
-.w-100 {
-  width: 100%;
+.fa-css3-alt {
+  color: $css;
 }
-.m-auto {
-  margin: auto;
+.fa-js-square {
+  color: $js;
+}
+.fa-php {
+  color: $php;
+}
+.fa-react {
+  color: $react;
+}
+.fa-angular {
+  color: $angular;
+}
+.fa-node {
+  color: $node;
+}
+.fa-laravel {
+  color: $laravel;
+}
+.fa-wordpress {
+  color: $wordpress;
+}
+.fa-drupal {
+  color: $drupal;
+}
+.fa-git {
+  color: $git;
 }
