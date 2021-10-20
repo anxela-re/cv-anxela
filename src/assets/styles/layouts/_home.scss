@@ -458,13 +458,13 @@ p {
     }
   }
 
+}
   .slider-bar-item.active + .slider-link {
     .container-link {
       border-right-color: $secondary-light;
       border-left-color: $secondary-light;
     }
   }
-}
 @media (min-width: $mqMinWidthTablet) {
   .slider-bar {
     .slider-bar-item {
