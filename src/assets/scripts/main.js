@@ -81,11 +81,11 @@
     sliderBar3.classList.remove("active");
 
     let calculateGradient = (100 / (limit1 - limit0)) * (percentage - limit0);
-    sliderLink1.style.background = `linear-gradient(to right, rgba(73, 116, 165, 0.6) ${calculateGradient}%, transparent ${calculateGradient}%)`;
+    sliderLink1.style.background = `linear-gradient(to right, #7f93bb ${calculateGradient}%, transparent ${calculateGradient}%)`;
 
     if (percentage > limit1) {
       calculateGradient = (100 / (limit2 - limit1)) * (percentage - limit1);
-      sliderLink2.style.background = `linear-gradient(to right, rgba(73, 116, 165, 0.6) ${calculateGradient}%, transparent ${calculateGradient}%)`;
+      sliderLink2.style.background = `linear-gradient(to right, #7f93bb ${calculateGradient}%, transparent ${calculateGradient}%)`;
       
       slide1.classList.remove("is-active");
       slide3.classList.remove("is-active");

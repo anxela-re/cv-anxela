@@ -441,20 +441,27 @@ p {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: calc(100% + 4px);
+      width: calc(100% + 10px);
       height: 100%;
-      border-top: 2px solid $primary;
-      border-right: 3px solid $white;
-      border-bottom: 2px solid $primary;
-      border-left: 3px solid $white;
+      border-top: 3px solid $primary;
+      border-right: 6px solid $white;
+      border-bottom: 3px solid $primary;
+      border-left: 6px solid $white;
       transform: translate(-50%, -50%);
     }
   }
 
   .slider-bar-item.active {
-    background-color: $secondary-700;
+    background-color: $secondary-light;
     i {
-      color: $secondary-700;
+      color: $secondary-light;
+    }
+  }
+
+  .slider-bar-item.active + .slider-link {
+    .container-link {
+      border-right-color: $secondary-light;
+      border-left-color: $secondary-light;
     }
   }
 }
@@ -475,7 +482,7 @@ p {
       width: 15vh;
       height: 1.2vh;
       .container-link {
-        width: calc(100% + 8px);
+        width: calc(100% + 12px);
         border-top-width: 4px;
         border-right-width: 8px;
         border-bottom-width: 4px;
