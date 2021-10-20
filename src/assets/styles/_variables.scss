@@ -19,12 +19,6 @@ $secondary-light: #7f93bb;
 $primary-accent: #fff;
 $primary-bg: color.scale($secondary, $lightness: 70%);
 
-$linear-gradient-primary: linear-gradient(
-  180deg,
-  transparent 0% 40%,
-  $primary 40% 100%
-);
-
 $white: #fff;
 $black: #212121;
 $black-60: rgba(21, 21, 21, 0.06);
@@ -68,9 +62,25 @@ $css: #2173f7;
 $js: #cfb430;
 $php: #7377ad;
 $react: #08d9fe;
-$angular:#d6002f;
+$angular: #d6002f;
 $node: #86be00;
-$laravel:#ef3b2d;
+$laravel: #ef3b2d;
 $wordpress: #007096;
-$drupal:#008ac9;
+$drupal: #008ac9;
 $git: #eb4d28;
+
+$linear-gradient-primary: linear-gradient(
+  180deg,
+  transparent 0% 40%,
+  $primary 40% 100%
+);
+$linear-gradient-secondary-dark: linear-gradient(
+  315deg,
+  $secondary-dark 0%,
+  $black 74%
+);
+$linear-gradient-secondary-transparent: linear-gradient(
+  315deg,
+  $secondary-800 0%,
+  $black-800 74%
+);

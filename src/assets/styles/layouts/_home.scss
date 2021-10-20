@@ -17,6 +17,10 @@ body {
   word-break: normal;
   background-color: $white;
 }
+section,
+footer {
+  z-index: 2;
+}
 section {
   min-width: 100%;
   max-width: 100%;
@@ -127,10 +131,32 @@ p {
   }
 }
 .arrow-button {
-  position: sticky;
+  position: fixed;
   top: 80vh;
   left: 50%;
-  transform: translateX(-50%);
+  z-index: 1;
+  padding: 10px;
+  border-radius: 100%;
+  transform:  translateX(-50%);
+  animation: pulse 2s 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: $primary-900;
+    box-shadow: 0 0 0 0 $primary-900;
+    transform: scale(0.95);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px $primary-200;
+    transform: scale(1);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(0.95);
+  }
 }
 
 .presentation {
@@ -298,13 +324,18 @@ p {
       }
     }
     .skills {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       align-content: stretch;
       align-items: center;
       justify-content: center;
       gap: 0.2rem;
       > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
         padding: 0.5rem;
         background-color: $black-100;
         border-radius: 10px;
@@ -387,6 +418,7 @@ p {
       }
       .skills {
         max-width: 700px;
+        grid-template-columns: repeat(4, 1fr);
         i {
           font-size: 6em;
         }
@@ -441,12 +473,10 @@ p {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: calc(100% + 10px);
+      width: 100%;
       height: 100%;
       border-top: 3px solid $primary;
-      border-right: 6px solid $white;
       border-bottom: 3px solid $primary;
-      border-left: 6px solid $white;
       transform: translate(-50%, -50%);
     }
   }
@@ -457,14 +487,7 @@ p {
       color: $secondary-light;
     }
   }
-
 }
-  .slider-bar-item.active + .slider-link {
-    .container-link {
-      border-right-color: $secondary-light;
-      border-left-color: $secondary-light;
-    }
-  }
 @media (min-width: $mqMinWidthTablet) {
   .slider-bar {
     .slider-bar-item {
@@ -482,11 +505,8 @@ p {
       width: 15vh;
       height: 1.2vh;
       .container-link {
-        width: calc(100% + 12px);
         border-top-width: 4px;
-        border-right-width: 8px;
         border-bottom-width: 4px;
-        border-left-width: 8px;
       }
     }
   }
@@ -511,14 +531,15 @@ p {
   }
   .container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
     max-width: 900px;
     padding-top: 2rem;
     margin: auto;
     gap: 1rem;
-    > div {
-      padding: 2rem;
+    a div {
+      padding: 1rem;
+      cursor: pointer;
       background-color: $black-100;
       border-radius: 10px;
     }
@@ -530,6 +551,53 @@ p {
     }
   }
 }
+@media (min-width: $mqMinWidthTablet) {
+  .projects .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: $mqMinWidthDesktop) {
+  .projects .container a div {
+    padding: 2rem;
+  }
+}
+
+.container a div {
+  position: relative;
+  overflow: hidden;
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    display: none;
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1;
+    color: $primary;
+    transform: translate(-50%, -50%);
+  }
+}
+.container a div:before {
+  position: absolute;
+  z-index: -1;
+  width: 5%;
+  height: 5%;
+  content: "";
+  background: $linear-gradient-secondary-transparent;
+  border-radius: 10px;
+  transition: transform 0.25s ease-out;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+}
+.container > a:hover div:before {
+  z-index: 1;
+  transform: scale(50);
+}
+.container > a:hover p {
+  display: block;
+}
 
 footer {
   display: flex;
@@ -540,7 +608,7 @@ footer {
   color: $white;
   text-align: center;
   background-color: $secondary;
-  background-image: linear-gradient(315deg, $secondary-dark 0%, $black 74%);
+  background-image: $linear-gradient-secondary-dark;
   .contact-container {
     display: flex;
     flex-direction: column;

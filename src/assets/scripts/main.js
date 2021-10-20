@@ -17,7 +17,10 @@
     let slide3 = document.querySelector(".slide-3");
 
     slidersContainer.style.height = `${
-      slide1.clientHeight + slide2.clientHeight + slide3.clientHeight + slide3.clientHeight
+      slide1.clientHeight +
+      slide2.clientHeight +
+      slide3.clientHeight +
+      slide3.clientHeight
     }px`;
   });
 
@@ -28,6 +31,14 @@
     slidersEffect();
   }
   function checkPosition() {
+    if (
+      document.querySelector("#presentation").getBoundingClientRect().top >=
+      window.innerHeight * 0.8
+    ) {
+      document.querySelector(".arrow-button").style.display = "block";
+    } else {
+      document.querySelector(".arrow-button").style.display = "none";
+    }
     document.querySelector(
       ".desk"
     ).style.transform = `matrix(1,0,0,1,0,${calculateTransform(0, -800)})`;
@@ -86,7 +97,7 @@
     if (percentage > limit1) {
       calculateGradient = (100 / (limit2 - limit1)) * (percentage - limit1);
       sliderLink2.style.background = `linear-gradient(to right, #7f93bb ${calculateGradient}%, transparent ${calculateGradient}%)`;
-      
+
       slide1.classList.remove("is-active");
       slide3.classList.remove("is-active");
       slide2.classList.add("is-active");
