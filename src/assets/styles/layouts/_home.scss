@@ -25,7 +25,6 @@ section {
   min-width: 100%;
   max-width: 100%;
   min-height: 100vh;
-  padding: 2rem;
   text-align: center;
   background-color: $white;
 }
@@ -132,30 +131,27 @@ p {
 }
 .arrow-button {
   position: fixed;
-  top: 80vh;
+  bottom: 10vh;
   left: 50%;
   z-index: 1;
   padding: 10px;
   border-radius: 100%;
-  transform:  translateX(-50%);
+  transform: translateX(-50%);
   animation: pulse 2s 3s infinite;
 }
 
 @keyframes pulse {
   0% {
-    background-color: $primary-900;
+    background-color: $primary;
     box-shadow: 0 0 0 0 $primary-900;
-    transform: scale(0.95);
   }
 
   70% {
     box-shadow: 0 0 0 10px $primary-200;
-    transform: scale(1);
   }
 
   100% {
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    transform: scale(0.95);
   }
 }
 
@@ -163,7 +159,6 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 1rem;
   background-color: $white;
 
   .img-container {
@@ -214,7 +209,6 @@ p {
 }
 @media (min-width: $mqMinWidthTablet) {
   .presentation {
-    padding: 5rem 4rem;
     .img-container {
       width: 260px;
       height: 260px;
@@ -282,13 +276,9 @@ p {
     }
   }
 
-  .slide-1 p {
-    display: inline;
-    margin-left: 1rem;
-  }
   .slide {
     position: absolute;
-    top: 10px;
+    bottom: 0;
     left: 50%;
     z-index: 1;
     display: flex;
@@ -297,7 +287,8 @@ p {
     justify-content: center;
     width: 100%;
     max-width: 1920px;
-    height: 100vh;
+    height: 100%;
+    padding: 1rem;
     overflow: hidden;
     text-align: center;
     opacity: 0;
@@ -326,17 +317,19 @@ p {
     .skills {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      align-content: stretch;
-      align-items: center;
-      justify-content: center;
       gap: 0.2rem;
+      height: 80%;
+      margin: {
+        bottom:0;
+        top:auto;
+      };
       > div {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 100%;
         height: 100%;
-        padding: 0.5rem;
+        padding: 0.1rem;
         background-color: $black-100;
         border-radius: 10px;
       }
@@ -364,7 +357,7 @@ p {
         }
         h2 {
           margin: 0.5rem auto;
-          font-size: 2.2rem;
+          font-size: 1.5rem;
         }
         h3 {
           margin: 0.5rem auto;
@@ -401,11 +394,9 @@ p {
         }
         h2 {
           margin: 1rem auto;
-          font-size: 2.5rem;
         }
         h3 {
           margin: 1rem auto;
-          font-size: 1.5rem;
         }
         p {
           font-size: 1.2rem;
@@ -420,7 +411,7 @@ p {
         max-width: 700px;
         grid-template-columns: repeat(4, 1fr);
         i {
-          font-size: 6em;
+          font-size: 4em;
         }
       }
     }
@@ -525,6 +516,7 @@ p {
 }
 
 .projects {
+  padding: 1rem;
   h2 {
     display: inline;
     background: $linear-gradient-primary;
@@ -635,6 +627,9 @@ footer {
   }
   a {
     color: $white;
+  }
+  a:hover {
+    color: $primary;
   }
 }
 @media (min-width: $mqMinWidthTablet) {
