@@ -1,8 +1,8 @@
 {
-  "name": "uoc-boilerplate",
+  "name": "cv-anxela",
   "version": "3.2.0",
   "private": true,
-  "description": "Boilerplate for Advanced HTML/CSS Tools UOC students",
+  "description": "Curriculum Vitae Anxela Redondo Rodríguez",
   "scripts": {
     "parcel:serve": "parcel src/index.html -p 8123 --target web --open",
     "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache",
