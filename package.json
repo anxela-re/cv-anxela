@@ -49,6 +49,7 @@
     "stylelint-scss": "^3.21.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4"
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "stylelint-selector-bem-pattern": "^2.1.1"
   }
 }
